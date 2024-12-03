@@ -2,7 +2,7 @@
 
 # 📄 **Resume Classification Application**  
 
-### 🛠️ Developed By: **Group 3**  
+### 🛠️ Developed By: **Mahesh Rathod**  
 Welcome to the **Resume Classification Application**, an intelligent tool for analyzing resumes and predicting job profiles with skill extraction! 🚀  
 
 ---
