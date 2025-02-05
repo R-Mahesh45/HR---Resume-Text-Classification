@@ -1,79 +1,55 @@
----
+### Step-by-Step Explanation 🌟
 
-# 📄 **Resume Classification Application**  
+#### 1. Data Preparation 📋
+- **Objective**: Load the dataset and prepare it for analysis.
+- **Actions**: 
+  - Create a sample DataFrame containing document information such as file names, text content, and categories.
+  - This DataFrame will be used for further processing.
 
-### 🛠️ Developed By: **Mahesh Rathod**  
-Welcome to the **Resume Classification Application**, an intelligent tool for analyzing resumes and predicting job profiles with skill extraction! 🚀  
+#### 2. Text Preprocessing 🧹
+- **Objective**: Clean and transform the raw text data into a format suitable for analysis.
+- **Actions**:
+  - **Convert to Lowercase**: Convert all text to lowercase to ensure uniformity.
+  - **Tokenize**: Split the text into individual words.
+  - **Remove Stopwords**: Remove common words (e.g., "and", "the") that do not carry significant meaning.
+  - **Stemming**: Reduce words to their root forms (e.g., "running" to "run").
+  - **Lemmatization**: Further reduce words to their base forms (e.g., "better" to "good").
 
----
+#### 3. Feature Extraction 🔍
+- **Objective**: Convert the processed text data into numerical features using TF-IDF.
+- **Actions**:
+  - **TF-IDF Vectorization**: Transform the text data into a matrix of TF-IDF features. TF-IDF (Term Frequency-Inverse Document Frequency) captures the importance of each word in the document relative to the entire corpus.
 
-## 🎯 **Features**
-- 📂 **Upload resumes**: Accepts multiple file types (`.pdf` and `.docx`).
-- 🧠 **Skill Extraction**: Automatically extracts relevant skills from resumes.
-- 🔍 **Job Profile Prediction**: Uses machine learning models to classify resumes into job profiles.  
-- 📊 **Interactive Interface**: Built with **Streamlit** for easy interaction.
+#### 4. Encode the Target Variable 🔢
+- **Objective**: Convert the categorical target variable (document category) into numerical values.
+- **Actions**:
+  - Use `LabelEncoder` to encode the categories into numerical values.
 
----
+#### 5. Split the Data ✂️
+- **Objective**: Split the dataset into training and testing sets for model evaluation.
+- **Actions**:
+  - Use `train_test_split` to split the data into training (80%) and testing (20%) sets.
 
-## 🚀 **How It Works**
-1. **Upload**: Drag and drop your resume(s) in `.pdf` or `.docx` format.
-2. **Processing**: 
-   - The application preprocesses the resume text.
-   - Skills are extracted, and the text is classified using a trained ML model.
-3. **Output**: 
-   - Displays uploaded file details.
-   - Shows extracted skills and the predicted job profile in a clean table format.
+#### 6. Model Training 🧠
+- **Objective**: Train a machine learning model on the training data.
+- **Actions**:
+  - **Model Selection**: Use a Logistic Regression model.
+  - **Training**: Fit the model on the training data.
 
----
+#### 7. Model Evaluation 📊
+- **Objective**: Evaluate the model's performance on both the training and testing sets.
+- **Actions**:
+  - **Predictions**: Make predictions on the training and testing sets.
+  - **Accuracy**: Calculate the accuracy of the model on both sets.
+  - **Classification Report**: Generate a classification report to provide detailed metrics (precision, recall, F1-score) for each class.
+  - **Bar Plot**: Visualize the accuracy on the training and testing sets using a bar plot.
 
-## 🛠️ **Libraries Used**
-This application uses several powerful libraries for text processing and machine learning:
+#### 8. Create Word Cloud ☁️
+- **Objective**: Visualize the most important words in the dataset based on their TF-IDF scores.
+- **Actions**:
+  - **TF-IDF Means**: Calculate the average TF-IDF scores for each feature (word).
+  - **Word Cloud Generation**: Generate a word cloud where the size of each word indicates its importance (TF-IDF score).
 
-- **Text Processing**:
-  - `nltk` 🪶
-  - `spaCy` 📚
-  - `docx2txt` 📄
-  - `pdfplumber` 📜  
-- **Data Handling**:
-  - `pandas` 📊
-  - `numpy` 🔢
-- **Machine Learning**:
-  - `sklearn` 🤖
-  - `pickle` 📦
-- **Visualization**:
-  - `matplotlib` 📉  
+### Summary 🌟
 
-
-## 📦 **Installation**
-1. Clone the repository:  
-   ```bash
-   git clone <repository-url>
-   cd <project-directory>
-   ```
-2. Install dependencies:  
-   ```bash
-   pip install -r requirements.txt
-   ```
-3. Run the application:  
-   ```bash
-   streamlit run app.py
-   ```
-
----
-
-## 🛡️ **Security Measures**
-- Handles sensitive resume data securely.
-- Ensures no data is stored locally after processing.
----
-
-## 📝 **Future Enhancements**
-- 🤝 Integrate support for more file formats.
-- 🚀 Deploy the application online for global access.
-- 📈 Improve classification accuracy with deep learning models.
-- 🌐 Add multi-language resume processing.
-
----
-
-## 📧 **Contact Us**
-For any queries or contributions, feel free to reach out:  
-**Email**: `maheshrathod2236@gmail.com`  
+This step-by-step explanation guides you through the process of preparing text data, extracting features, training and evaluating a machine learning model, and visualizing important words using a word cloud. This comprehensive approach provides insights into the importance of different words in your dataset and helps you understand the performance of your classification model.
